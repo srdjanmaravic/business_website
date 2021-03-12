@@ -70,6 +70,45 @@ a {
         width: 95%;
     }
 }
+.headings {
+    padding: $padding;
+    @include flex(space-between, center ,row );
+    article:first-child {
+        flex:2;
+        @media (max-width: 767px) {
+            flex: 0 0 100%
+        }
+        h2 {
+            font-size: 10rem;
+            color: $lightgray;
+            @media (max-width: 767px) {
+                font-size: 8rem;
+            }
+        }
+    }
+    article:last-child {
+        flex: 10;
+        @media (max-width: 767px) {
+            flex: 0 0 100%
+        }
+        h3 {
+            text-transform: uppercase
+        }
+        h2 {
+            font-size: 3rem;
+            @media (max-width: 767px) {
+                width: 95%;
+            }
+            span {
+                font-size: 2rem;
+            }
+        }
+        h4 {
+            font-size: 1.5rem;
+            font-weight: 300;
+        }
+    }
+}
 /*********************
 NAV
 *********************/
@@ -195,4 +234,43 @@ header {
         @include btn;
     }
     
+}
+/*********************
+about
+*********************/
+.about {
+    @include flex(space-between,center,row);
+    article:first-child {
+        flex: 1;
+        height: 500px;
+        @media (max-width: 767px) {
+            flex: 0 0 100%;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+    }
+    article:last-child {
+        @include flex(center,flex-start,column);
+        height: 500px;
+        flex: 1;
+        @media (max-width: 767px) {
+            
+            @include flex(center,center,column);
+            padding: 20px;
+        }
+        background:$black;
+        color: $white;
+        padding:0 40px;
+        h2 {
+            font-size: 2.5rem;
+            @media (max-width: 767px) {
+                 
+                font-size: 1.7rem;
+            }
+        }
+    }
 }
