@@ -166,6 +166,7 @@ footer {
     padding: 100px 0;
     background: linear-gradient(to right, $black, $pink);
     text-align: center;
+    color: $white;
     .container {
         @include flex(space-between, center, row);
         .col {
@@ -314,6 +315,9 @@ black heading
         text-align: center;
         .col {
             flex: 1;
+            @media(max-width: 767px) {
+                flex: 0 0 100%;
+            }
             h2 {
                 color: $pink;
                 font-size: 4rem;
@@ -329,6 +333,37 @@ black heading
                 width: 100px;
                 margin: 30px auto 0 ;
             }
+        }
+    }
+}
+/*****************
+Team
+*****************/
+.team {
+    @include flex(space-between, center, row);
+    padding-bottom: 100px;
+    text-align: center;
+    
+    article {
+        flex: 0 0 30%;
+        @media(max-width: 767px) {
+            flex: 0 0 100%;
+        }
+        img {
+            width: 100%;
+            border-radius: 50%;
+            opacity: .8;
+            transition: $transition;
+            border: 15px solid $lightgray;
+            &:hover {
+                transform:scale(1.1);
+                border: 15px solid $pink;
+            }
+        }
+        h4 {
+            color: $pink;
+            font-size: 1.3rem;
+            padding: 20px 0;
         }
     }
 }
