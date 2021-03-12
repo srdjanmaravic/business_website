@@ -51,7 +51,10 @@ a {
         transition: $transition;
     }
 }
-
+.container {
+    width:80%;
+    margin: 0 auto;
+}
 /*********************
 NAV
 *********************/
@@ -98,5 +101,35 @@ nav {
             }
         }
          
+    }
+}
+
+/*********************
+FOOTER
+*********************/
+
+footer {
+    padding: 100px 0;
+    background: linear-gradient(to right, $black,$pink);
+    text-align: center;
+    .container {
+        @include flex(space-between, center ,row );
+        .col {
+            flex: 1;
+            .logo {
+                font-size: 1.5rem;
+                line-height: 25px;
+                font-weight: 600;
+                span {
+                    font-size: 1rem;
+                    color: $pink;
+                    font-weight: 500;
+                }
+                &:hover {
+                    color: $pink;
+                    transition: $transition;
+                }
+            }
+        }
     }
 }
